@@ -27,8 +27,8 @@ var width = 920 - margin.left - margin.right,
 // Add a flag that we'll use to choose whether to use cases or deaths data.
 var flag = true;
 
-// Duration should be lower than our loop's delay.
-var t = d3.transition().duration(1000);
+// Duration should be lower than our loop's delay. (see d3.interval below)
+var t = d3.transition().duration(2000);
 
 var g = d3.select("#chart-area")
     .append("svg")
@@ -66,7 +66,7 @@ var xLabel = g.append("text")
     .attr("x", width / 2)
     .attr("font-size", "13px")
     .attr("text-anchor", "middle")
-    .text("Total Cases Per Day");
+    .text("Total COVID-19 Cases Per Day (United States Nationwide)");
 
 // Y Label
 var yLabel = g.append("text")
@@ -86,13 +86,11 @@ d3.csv("data/jd_us_cases_and_deaths.csv").then(function (data) {
         d.deaths = +d.deaths;
     });
 
-    // console.log(data);
-
     d3.interval(function () {
         var newData = flag ? data : data.slice(1);
         update(newData);
         flag = !flag;
-    }, 1500);
+    }, 2500);
 
     // Run the viz for the first time to get rid of the initial delay from the update function above.
     update(data);
@@ -101,6 +99,7 @@ d3.csv("data/jd_us_cases_and_deaths.csv").then(function (data) {
 
 // Step 1
 function update(data) {
+
     var value = flag ? "cases" : "deaths";
 
     /*var current_time = Date(Date.now());
@@ -160,11 +159,16 @@ function update(data) {
             .attr("y", function (d) { return y(d[value]); })
             .attr("height", function (d) { return height - y(d[value]); })
 
+    if (value == "cases") {
+        rects.attr("fill", "#6495ed");
+    } else {
+        rects.attr("fill", "#8B008B");
+    }
+
+
     var ylabel = flag ? "Number of Cases (log base 10)" : "Number of Deaths (log base 10)";
-    var xlabel = flag ? "Total Cases Per Day": "Total Deaths Per Day";
+    var xlabel = flag ? "Total COVID-19 Cases Per Day in the United States": "Total COVID-19 Deaths Per Day in the United States";
     yLabel.text(ylabel);
     xLabel.text(xlabel);
 }
 
-
-console.log("Stop.");

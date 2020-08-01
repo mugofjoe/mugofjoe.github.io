@@ -51,3 +51,12 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.author {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
