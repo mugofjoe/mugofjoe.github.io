@@ -21,12 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="371e6abf-2149-4ffb-881d-f77b4481e9a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/99.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/jd_us_cases_and_deaths.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/jd_us_cases_and_deaths.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/99.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/covid7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid6.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid7.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid7.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596245239920</updated>
-      <workItem from="1596245241271" duration="41000000" />
+      <workItem from="1596245241271" duration="43706000" />
+      <workItem from="1596399014344" duration="654000" />
     </task>
     <servers />
   </component>
@@ -72,6 +69,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1596321726967">
