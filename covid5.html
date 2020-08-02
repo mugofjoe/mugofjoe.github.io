@@ -3,16 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <title>A Timeline of a Modern-Day Pandemic</title>
+    <title>Covid 19 Cases in the United States</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
           integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
           crossorigin="anonymous">
+    <!-- D3 Tooltip CSS -->
+    <link rel="stylesheet" href="css/d3-tip.css">
     <!-- Custom styling -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+<!-- Bootstrap grid setup -->
 <div class="container">
     <div class="row">
         <div id="chart-area"></div>
@@ -21,21 +25,28 @@
 
 <div class="container">
     <div id="selections" class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <h2 style="text-align: center">A Timeline of a Modern-Day Pandemic</h2>
-            <p class="author" style="text-align: center">By Joel Dazo</p>
+        <div class="col-md-2">
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2 style="text-align: center">New Deaths are on the Rise</h2>
+            <p class="author" style="text-align: center">A Timeline of a Modern-Day Pandemic By Joel Dazo</p>
+        </div>
+        <div class="col-md-2">
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 jd-article">
-            The coronavirus originated from a wet market in Wuhan China in the late 2019. Since then,
-            it has spread to more than 177 countries, taken the lives of more than 600,000 people and made around
-            14.7 million people ill worldwide prompting the World Health Organization to declare it as a pandemic.
+        <div class="col-md-2">
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-8 jd-article">
+            In lock step with the number of new cases is the number of deaths attributed to coronavirus. Insights
+            about the number of new deaths may assist in the determination of the overall efficacy of the response
+            taken by the government or society to manage the spread of the virus. The months of April and May saw
+            an encouraging decrease in the daily new mortality levels only to be interrupted by a remarkable positive
+            trend beginning in the latter part of June and highlighted by 2,378 single day new death level on
+            June 27, 2020.
+        </div>
+        <div class="col-md-2">
+        </div>
     </div>
     <div class="row" style="padding-top: 30px">
         <div class="col-md-1">
@@ -44,18 +55,18 @@
             <div style="text-align: center">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="index.html" tabindex="-1">Previous</a>
+                        <li class="page-item">
+                            <a class="page-link" href="covid4.html" tabindex="-1">Previous</a>
                         </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
                         <li class="page-item"><a class="page-link" href="covid2.html">2</a></li>
                         <li class="page-item"><a class="page-link" href="covid3.html">3</a></li>
                         <li class="page-item"><a class="page-link" href="covid4.html">4</a></li>
-                        <li class="page-item"><a class="page-link" href="covid5.html">5</a></li>
+                        <li class="page-item active"><a class="page-link" href="covid5.html">5</a></li>
                         <li class="page-item"><a class="page-link" href="covid6.html">6</a></li>
                         <li class="page-item"><a class="page-link" href="covid7.html">7</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="covid2.html">Next</a>
+                            <a class="page-link" href="covid6.html">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -64,11 +75,13 @@
         <div class="col-md-1"></div>
     </div>
 </div>
-
 <!-- External JS libraries -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
+<script src="js/d3-tip.js"></script>
 <!-- Custom JS -->
-<script src="js/index.js"></script>
+<script src="js/covid5.js"></script>
 
 </body>
 </html>

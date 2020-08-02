@@ -28,7 +28,7 @@ var width = 920 - margin.left - margin.right,
 var flag = true;
 
 // Duration should be lower than our loop's delay. (see d3.interval below)
-var t = d3.transition().duration(2000);
+var t = d3.transition().duration(1000);
 
 var g = d3.select("#chart-area")
     .append("svg")
@@ -66,7 +66,7 @@ var xLabel = g.append("text")
     .attr("x", width / 2)
     .attr("font-size", "13px")
     .attr("text-anchor", "middle")
-    .text("Total COVID-19 Cases Per Day (United States Nationwide)");
+    .text("Total Coronavirus Cases Per Day (United States Nationwide)");
 
 // Y Label
 var yLabel = g.append("text")
@@ -90,7 +90,7 @@ d3.csv("data/jd_us_cases_and_deaths.csv").then(function (data) {
         var newData = flag ? data : data.slice(1);
         update(newData);
         flag = !flag;
-    }, 2500);
+    }, 1500);
 
     // Run the viz for the first time to get rid of the initial delay from the update function above.
     update(data);
@@ -146,7 +146,7 @@ function update(data) {
     // ENTER new elements present in new data...
     rects.enter()
         .append("rect")
-            .attr("fill", "#6495ed")
+            .attr("fill", "#86C5E7")
             .attr("y", y(0))
             .attr("height", 0)
             .attr("x", function (d) { return x(d.date_text); })
@@ -160,14 +160,14 @@ function update(data) {
             .attr("height", function (d) { return height - y(d[value]); })
 
     if (value == "cases") {
-        rects.attr("fill", "#6495ed");
+        rects.attr("fill", "#86C5E7");
     } else {
-        rects.attr("fill", "#8B008B");
+        rects.attr("fill", "#D6AED6");
     }
 
 
     var ylabel = flag ? "Number of Cases (log base 10)" : "Number of Deaths (log base 10)";
-    var xlabel = flag ? "Total COVID-19 Cases Per Day in the United States": "Total COVID-19 Deaths Per Day in the United States";
+    var xlabel = flag ? "Total Coronavirus Cases Per Day in the United States": "Total Coronavirus Deaths Per Day in the United States";
     yLabel.text(ylabel);
     xLabel.text(xlabel);
 }

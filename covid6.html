@@ -1,0 +1,192 @@
+<!-- 
+ -->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>8.4 - Choropleth maps</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Bootstrap grid setup -->
+<div class="container">
+    <div class="row" style="padding-top: 50px;">
+        <div style="text-align: center">
+            <svg width="950" height="600"></svg>
+        </div>
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+    <div id="selections" class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <h2 style="text-align: center">New Deaths are on the Rise</h2>
+            <p class="author" style="text-align: center">A Timeline of a Modern-Day Pandemic By Joel Dazo</p>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 jd-article">
+            The number of new coronavirus cases has not dipped below 10,000 since March 23.
+            Most of the states have started re-opening in the latter week of April through May.
+            Perhaps the effect of the re-opening may explain the strong resurgence of new COVID-19
+            cases beginning in June.
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row" style="padding-top: 30px">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div style="text-align: center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="covid5.html" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+                        <li class="page-item"><a class="page-link" href="covid2.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="covid3.html">3</a></li>
+                        <li class="page-item"><a class="page-link" href="covid4.html">4</a></li>
+                        <li class="page-item"><a class="page-link" href="covid5.html">5</a></li>
+                        <li class="page-item active"><a class="page-link" href="covid6.html">6</a></li>
+                        <li class="page-item"><a class="page-link" href="covid7.html">7</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="covid7.html">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+
+
+        <!-- External JS libraries -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="//d3js.org/topojson.v2.min.js"></script>
+
+        <script>
+
+            var svg = d3.select("svg"),
+                width = +svg.attr("width"),
+                height = +svg.attr("height");
+
+            var num_cases = d3.map();
+            var county_names = d3.map();
+
+            var path = d3.geoPath();
+
+            var x = d3.scaleLinear()
+                .domain([1, 10])
+                .rangeRound([600, 860]);
+
+            var color = d3.scaleThreshold()
+                .domain(d3.range(2, 10))
+                .range(d3.schemeBlues[9]);
+
+            var g = svg.append("g")
+                .attr("class", "key")
+                .attr("transform", "translate(0,40)");
+
+            g.selectAll("rect")
+                .data(color.range().map(function (d) {
+                    d = color.invertExtent(d);
+                    if (d[0] == null) d[0] = x.domain()[0];
+                    if (d[1] == null) d[1] = x.domain()[1];
+                    return d;
+                }))
+                .enter().append("rect")
+                .attr("height", 8)
+                .attr("x", function (d) {
+                    return x(d[0]);
+                })
+                .attr("width", function (d) {
+                    return x(d[1]) - x(d[0]);
+                })
+                .attr("fill", function (d) {
+                    return color(d[0]);
+                });
+
+            g.append("text")
+                .attr("class", "caption")
+                .attr("x", x.range()[0])
+                .attr("y", -6)
+                .attr("fill", "#000")
+                .attr("text-anchor", "start")
+                .attr("font-weight", "bold")
+                .text("Number of Cases (x100)");
+
+            g.call(d3.axisBottom(x)
+                .tickSize(13)
+                .tickFormat(function (x, i) {
+                    return i ? x : x;
+                })
+                .tickValues(color.domain()))
+                .select(".domain")
+                .remove();
+
+            /*
+                Before V5
+                d3.queue()
+                    .defer(d3.json, "https://d3js.org/us-10m.v1.json")
+                    .defer(d3.tsv, "data/map.tsv", function(d) { num_cases.set(d.id, +d.rate); })
+                    .await(ready);
+            */
+
+            var promises = [
+                d3.json("https://d3js.org/us-10m.v1.json"),
+                d3.tsv("data/map.tsv", function (d) {
+                    num_cases.set(d.id, +d.rate);
+                    county_names.set(d.id, d.county_name);
+                })
+            ]
+
+            Promise.all(promises).then(function (data) {
+                ready(data[0]);
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            function ready(us) {
+                svg.append("g")
+                    .attr("class", "counties")
+                    .selectAll("path")
+                    .data(topojson.feature(us, us.objects.counties).features)
+                    .enter().append("path")
+                    .attr("fill", function (d) {
+                        return color(d.rate = num_cases.get(d.id));
+                    })
+                    .attr("d", path)
+                    .append("title")
+                    .text(function (d) {
+                        return county_names.get(d.id) + " has about " + d3.format(",.0f")(d.rate * 100) + " cases.";
+                    });
+
+                svg.append("path")
+                    .datum(topojson.mesh(us, us.objects.states, function (a, b) {
+                        return a !== b;
+                    }))
+                    .attr("class", "states")
+                    .attr("d", path);
+            }
+
+            console.log("Finish");
+
+        </script>
+
+</body>

@@ -3,16 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <title>A Timeline of a Modern-Day Pandemic</title>
+    <title>Covid 19 Cases in the United States</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
           integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
           crossorigin="anonymous">
+    <!-- D3 Tooltip CSS -->
+    <link rel="stylesheet" href="css/d3-tip.css">
     <!-- Custom styling -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+<!-- Bootstrap grid setup -->
 <div class="container">
     <div class="row">
         <div id="chart-area"></div>
@@ -21,41 +25,48 @@
 
 <div class="container">
     <div id="selections" class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <h2 style="text-align: center">A Timeline of a Modern-Day Pandemic</h2>
-            <p class="author" style="text-align: center">By Joel Dazo</p>
+        <div class="col-md-2">
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2 style="text-align: center">Four Million Coronavirus Cases in Seven Months</h2>
+            <p class="author" style="text-align: center">A Timeline of a Modern-Day Pandemic By Joel Dazo</p>
+        </div>
+        <div class="col-md-2">
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 jd-article">
-            The coronavirus originated from a wet market in Wuhan China in the late 2019. Since then,
-            it has spread to more than 177 countries, taken the lives of more than 600,000 people and made around
-            14.7 million people ill worldwide prompting the World Health Organization to declare it as a pandemic.
+        <div class="col-md-2">
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-8 jd-article">
+            A little over a week after China's official media reported its first coronavirus death, Thailand,
+            Japan and South Korea reported their first confirmed cases outside of mainland China. The next day,
+            the United States reported its first coronavirus patient who developed symptoms after returning from
+            a visit to Wuhan. That began a steady trend in cumulative coronavirus cases from January 26 to February 23.
+            The case count dramatically increased from 20 cases in February 26 to 163,705 cases after just 30 days, a
+            prodigious 818,425% increase. The cumulative U.S. coronavirus cases is about 4.2 million by July 26, 2020.
+        </div>
+        <div class="col-md-2">
+        </div>
     </div>
-    <div class="row" style="padding-top: 30px">
+    <div class="row" style="padding-top: 30px;">
         <div class="col-md-1">
         </div>
         <div class="col-md-10">
             <div style="text-align: center">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item disabled">
+                        <li class="page-item">
                             <a class="page-link" href="index.html" tabindex="-1">Previous</a>
                         </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="covid2.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="covid2.html">2</a></li>
                         <li class="page-item"><a class="page-link" href="covid3.html">3</a></li>
                         <li class="page-item"><a class="page-link" href="covid4.html">4</a></li>
                         <li class="page-item"><a class="page-link" href="covid5.html">5</a></li>
                         <li class="page-item"><a class="page-link" href="covid6.html">6</a></li>
                         <li class="page-item"><a class="page-link" href="covid7.html">7</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="covid2.html">Next</a>
+                            <a class="page-link" href="covid3.html">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -66,9 +77,12 @@
 </div>
 
 <!-- External JS libraries -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
+<script src="js/d3-tip.js"></script>
 <!-- Custom JS -->
-<script src="js/index.js"></script>
+<script src="js/covid2.js"></script>
 
 </body>
 </html>

@@ -54,9 +54,31 @@
 
 h1 {
   font-family: Georgia, "Times New Roman", serif;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .author {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4c4c4c;
+}
+
+.jd-article {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+}
+
+.counties {
+  fill: none;
+}
+
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
 }

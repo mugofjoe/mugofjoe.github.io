@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>CoinStats</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- Bootstrap grid setup -->
+<div class="container">
+    <div class="row">
+        <div id="chart-area"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div id="slider-div">
+                <label>Date: <span id="dateLabel1">1/22/2020</span> - <span id="dateLabel2">7/26/2020</span></label>
+                <div id="date-slider"></div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <select id="coin-select" class="form-control">
+                <option selected value="Harris County">Harris County</option>
+                <option value="Dallas County">Dallas County</option>
+                <option value="Tarrant County">Tarrant County</option>
+                <option value="Bexar County">Bexar County</option>
+                <option value="Travis County">Travis County</option>
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <select id="var-select" class="form-control">
+                <option selected value="cases">Number of cases</option>
+                <option value="deaths">Number of deaths</option>
+                <option value="new_cases">Number of new cases</option>
+                <option value="new_deaths">Number of new deaths</option>
+            </select>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row" style="padding-top: 30px">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <h2 style="text-align: center">Four Million Coronavirus Cases in Seven Months</h2>
+            <p class="author" style="text-align: center">A Timeline of a Modern-Day Pandemic By Joel Dazo</p>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 jd-article">
+            Nunc placerat feugiat tellus efficitur luctus. Aenean in dolor efficitur, dapibus enim non, pulvinar leo.
+            Curabitur mollis interdum euismod. Nulla condimentum tempor sapien, vitae lobortis eros sagittis eu. Duis
+            tempus porttitor tortor, quis varius augue lobortis eget. Sed efficitur diam sit amet sapien euismod
+            iaculis. Quisque dignissim urna vitae vulputate varius. Morbi porttitor turpis at mauris dapibus, sed
+            commodo lacus aliquam. Integer mollis magna tortor, eget elementum risus lacinia et. Aenean tincidunt
+            condimentum libero nec cursus. Donec a ligula sed ipsum suscipit ultrices.
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row" style="padding-top: 30px">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div style="text-align: center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="covid6.html" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+                        <li class="page-item"><a class="page-link" href="covid2.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="covid3.html">3</a></li>
+                        <li class="page-item"><a class="page-link" href="covid4.html">4</a></li>
+                        <li class="page-item"><a class="page-link" href="covid5.html">5</a></li>
+                        <li class="page-item"><a class="page-link" href="covid6.html">6</a></li>
+                        <li class="page-item active"><a class="page-link" href="covid7.html">7</a></li>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="covid7.html">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
+<!--        <div class="container">
+            <div id="selections" class="row">
+                <div class="col-md-4">
+                    <div id="slider-div">
+                        <label>Date: <span id="dateLabel1">1/22/2020</span> - <span id="dateLabel2">7/26/2020</span></label>
+                        <div id="date-slider"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select id="coin-select" class="form-control">
+                        <option selected value="Harris County">Harris County</option>
+                        <option value="Dallas County">Dallas County</option>
+                        <option value="Tarrant County">Tarrant County</option>
+                        <option value="Bexar County">Bexar County</option>
+                        <option value="Travis County">Travis County</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="var-select" class="form-control">
+                        <option selected value="cases">Number of cases</option>
+                        <option value="deaths">Number of deaths</option>
+                        <option value="new_cases">Number of new cases</option>
+                        <option value="new_deaths">Number of new deaths</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div id="chart-area"></div>  
+            </div>
+        </div>-->
+
+<!-- External JS libraries -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/d3.min.js"></script>
+<!-- Custom JS -->
+<script src="js/covid7.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

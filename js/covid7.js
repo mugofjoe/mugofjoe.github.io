@@ -33,7 +33,7 @@ var xLabel = g.append("text")
     .attr("class", "x axisLabel")
     .attr("y", height + 50)
     .attr("x", width / 2)
-    .attr("font-size", "20px")
+    .attr("font-size", "13px")
     .attr("text-anchor", "middle")
     .text("Time");
 var yLabel = g.append("text")
@@ -41,7 +41,7 @@ var yLabel = g.append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", -60)
     .attr("x", -170)
-    .attr("font-size", "20px")
+    .attr("font-size", "13px")
     .attr("text-anchor", "middle")
     .text("Number of cases or deaths")
 
@@ -191,10 +191,22 @@ function update(){
         .x(function(d){ return x(d.report_date); })
         .y(function(d){ return y(d[yValue]); });
 
+
+    console.log(yValue);
+
     // Update our line path
     g.select(".line")
         .transition(t)
         .attr("d", line(dataTimeFiltered));
+
+    if((yValue == "cases") || (yValue == "new_cases")){
+        g.select(".line")
+            .attr("stroke","#86C5E7");
+    } else {
+        g.select(".line")
+            .attr("stroke","#D6AED6");
+    }
+
 
     // Update y-axis label
     var newText = (yValue == "cases") ? "Number of cases" :
