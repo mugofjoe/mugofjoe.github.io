@@ -21,11 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="371e6abf-2149-4ffb-881d-f77b4481e9a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid2.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid3.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid4.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid5.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid6.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid6.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid7.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid7.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +53,8 @@
       <option name="presentableId" value="Default" />
       <updated>1596245239920</updated>
       <workItem from="1596245241271" duration="43706000" />
-      <workItem from="1596399014344" duration="3208000" />
+      <workItem from="1596399014344" duration="3838000" />
+      <workItem from="1596408643952" duration="443000" />
     </task>
     <servers />
   </component>
