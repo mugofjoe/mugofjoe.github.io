@@ -21,8 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="371e6abf-2149-4ffb-881d-f77b4481e9a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid2.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid3.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid4.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid5.html" beforeDir="false" afterPath="$PROJECT_DIR$/covid5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/covid2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/covid2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/covid3.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/covid3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/covid4.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/covid4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/covid5.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/covid5.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +58,7 @@
       <updated>1596245239920</updated>
       <workItem from="1596245241271" duration="43706000" />
       <workItem from="1596399014344" duration="3838000" />
-      <workItem from="1596408643952" duration="5438000" />
+      <workItem from="1596408643952" duration="6877000" />
     </task>
     <servers />
   </component>

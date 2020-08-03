@@ -9,6 +9,33 @@ var g = d3.select("#chart-area")
     .append("g")
         .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
+const annotations = [
+    {
+        note: {
+            label: "Coronavirus deaths reach 100 on March 16",
+            title: "100 Deaths"
+        },
+        x: 90,
+        y: 130
+    },
+    {
+        note: {
+            label: "33,579 deaths in April 16",
+            title: "33,000% Increase"
+        },
+        x: 180,
+        y: 30
+    }
+]
+
+// Add annotation to the chart
+const makeAnnotations = d3.annotation()
+    .annotations(annotations)
+
+g.append("g")
+    .call(makeAnnotations)
+
+
 
 // Tooltip
 var tip = d3.tip().attr('class', 'd3-tip')

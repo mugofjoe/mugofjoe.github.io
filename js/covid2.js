@@ -16,15 +16,15 @@ const annotations = [
             label: "Dramatic rise in cases starts around Feb 26",
             title: "Cases Increase"
         },
-        x: 50,
-        y: 130
+        x: 69,
+        y: 145
     },
     {
         note: {
-            label: "Slope gradually lessens.",
+            label: "Slope gradually lessens around Mar 27",
             title: "Slow Down"
         },
-        x: 180,
+        x: 170,
         y: 20
     }
 ]
