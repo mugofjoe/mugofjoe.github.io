@@ -12,19 +12,19 @@ var g = d3.select("#chart-area")
 const annotations = [
     {
         note: {
-            label: "Coronavirus deaths reach 100 on March 16",
-            title: "100 Deaths"
+            label: "Feb 28 starts the daily trend in new cases.",
+            title: ""
         },
-        x: 90,
-        y: 130
+        x: 45,
+        y: 200
     },
     {
         note: {
-            label: "33,579 deaths in April 16",
-            title: "33,000% Increase"
+            label: "New cases do not fall below 10,000 since March 23",
+            title: "No Looking Back"
         },
-        x: 180,
-        y: 30
+        x: 100,
+        y: 52
     }
 ]
 
