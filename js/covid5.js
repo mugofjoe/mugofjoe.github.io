@@ -12,19 +12,19 @@ var g = d3.select("#chart-area")
 const annotations = [
     {
         note: {
-            label: "Coronavirus deaths reach 100 on March 16",
-            title: "100 Deaths"
+            label: "On April 10, the US has become the first country in the world to record more than 2,000 coronavirus deaths in a single day",
+            title: "Black Friday"
         },
-        x: 90,
-        y: 130
+        x: 60,
+        y: 30
     },
     {
         note: {
-            label: "33,579 deaths in April 16",
-            title: "33,000% Increase"
+            label: "New deaths climb anew on July 5",
+            title: ""
         },
-        x: 180,
-        y: 30
+        x: 550,
+        y: -20
     }
 ]
 
